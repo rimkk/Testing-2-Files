@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Balls Game</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .game-container {
+            position: relative;
+        }
+        canvas {
+            border: 2px solid #333;
+            background-color: #fff;
+        }
+        .game-stats {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .score, .coins, .lives {
+            margin-bottom: 10px;
+        }
+        .game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: #FF1493;
+            display: none;
+            text-align: center;
+        }
+        .game-over button {
+            font-size: 24px;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #FF69B4;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        .game-over button:hover {
+            background-color: #FF1493;
+        }
+        .instructions {
+            margin-top: 20px;
+            text-align: center;
+            color: #666;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="canvas"></canvas>
+        <div class="game-stats">
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="coins">Coins: <span id="coins">0</span></div>
+            <div class="lives">Lives: <span id="lives">3</span></div>
+        </div>
+        <div class="game-over" id="gameOver">
+            Game Over!<br>
+            <span id="finalScore">Score: 0</span><br>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+    <div class="instructions">
+        Use left and right arrow keys to move the paddle<br>
+        Catch pink and purple balls to score points!<br>
+        Collect gold coins for bonus points!<br>
+        Avoid red balls - they cost you a life!
+    </div>
+    <script src="animation.js"></script>
+</body>
+</html> 
